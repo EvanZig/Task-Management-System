@@ -1,5 +1,16 @@
 import React from 'react'
 
 export default function App() {
-  return <div>Hello World</div>
+  return (
+    <div
+      className="pageWrap"
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      Hello from main page
+    </div>
+  )
 }
