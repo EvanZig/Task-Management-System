@@ -1,16 +1,13 @@
 import React from 'react'
+import AppRoutes from './AppRoutes'
+import AuthProvider from './Context/GlobalContext'
 
 export default function App() {
   return (
-    <div
-      className="pageWrap"
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      Hello from main page
+    <div className="pageWrap">
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
     </div>
   )
 }
