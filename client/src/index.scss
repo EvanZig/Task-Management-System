@@ -5,7 +5,7 @@ $main: #92a143;
 $green: #388719;
 $orange: #f0b70d;
 $red: #dc3545;
-$dark: #212529;
+$dark: #212121;
 
 .pageWrap {
   font-family: 'Noto Sans Batak', sans-serif;
@@ -13,8 +13,8 @@ $dark: #212529;
   font-style: normal;
   width: 100vw;
   height: 100vh;
-  color: black;
-  background-color: $main;
+  color: white;
+  background-color: $dark;
 }
 
 // add scrollwheel somewhere here
