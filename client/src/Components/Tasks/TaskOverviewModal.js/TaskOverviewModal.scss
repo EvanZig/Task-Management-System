@@ -1,0 +1,19 @@
+$main: #92a143;
+$green: #388719;
+$orange: #f0b70d;
+$red: #dc3545;
+$dark: #212121;
+
+.modalContent {
+}
+.taskCreationFooter {
+}
+
+.CreateTaskBtn {
+  background-color: $main;
+  border: none;
+}
+
+.CreateTaskBtn:hover {
+  background-color: $green;
+}
