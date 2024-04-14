@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaBold, FaCode, FaUnderline, FaItalic } from 'react-icons/fa'
+import { TbFileDescription } from 'react-icons/tb'
 
 export default function TaskDescription(props) {
   const [isBold, setIsBold] = useState(false)
@@ -24,7 +25,9 @@ export default function TaskDescription(props) {
   return (
     <div className="descriptionWrapper">
       <div className="flex justify-between ">
-        <label className="text-semibold ">Description</label>
+        <label className="text-semibold flex justify-center items-center">
+          Description <TbFileDescription size={17} className="ml-1" />
+        </label>
         <div
           className="justify-end items-end border-2 px-1 pt-1 border-black bg-gray-100 text-black mr-1"
           style={{ borderRadius: '8px 8px 0 0', borderBottomColor: 'white' }}

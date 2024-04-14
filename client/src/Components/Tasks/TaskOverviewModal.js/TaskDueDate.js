@@ -25,13 +25,13 @@ export default function TaskDueDate() {
         {isHovered ? (
           <>
             <button
-              className="hover:bg-red-500 w-1/2 items-center justify-center flex text-black"
+              className=" w-1/3 items-center justify-center flex text-black bg-red-500 hover:scale-105"
               onClick={handleDelete}
             >
               <FaRegTrashAlt size={18} />
             </button>
             <button
-              className="text-black w-1/2 hover:bg-blue-400 items-center justify-center flex"
+              className="text-black w-2/3 bg-blue-400 items-center justify-center flex hover:scale-105"
               onClick={handleDateChange}
             >
               <MdEditCalendar size={18} />
