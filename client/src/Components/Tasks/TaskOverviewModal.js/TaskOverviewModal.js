@@ -4,6 +4,8 @@ import './TaskOverviewModal.scss'
 import { RiCloseLine } from 'react-icons/ri'
 import { BiBookAdd } from 'react-icons/bi'
 import TaskDescription from './TaskDescription'
+import AttachFileButton from '../../TaskButtons/AttachFileButton/AttachFileButton'
+import AssignToButton from '../../TaskButtons/AssignToButton/AssignToButton'
 
 export default function TaskOverviewModal() {
   const [taskData, setTaskData] = useState({
@@ -68,11 +70,11 @@ export default function TaskOverviewModal() {
           >
             <div className="modal-content">
               <div className="modal-header flex justify-between items-center mb-4">
-                <div className="min-w-96 min-h-9" onClick={titleEdit}>
+                <div className="w-[90%] min-h-9" onClick={titleEdit}>
                   {isEditing ? (
                     <input
                       type="text"
-                      className="text-lg text-black rounded-sm shadow-md p-1 w-[85%] border-none focus:outline-none bg-gray-200 "
+                      className="text-black font-semibold rounded-sm shadow-md p-1 w-[100%] bg-gray-100 titleInput"
                       ref={titleRef}
                       onChange={formDataChange}
                       onKeyDown={(e) => {
@@ -87,7 +89,7 @@ export default function TaskOverviewModal() {
                   )}
                 </div>
                 <button
-                  className="text-white hover:text-gray-700 hover:scale-105"
+                  className="text-white hover:text-gray-700 hover:scale-110"
                   onClick={handleClose}
                 >
                   <RiCloseLine size={26} />
@@ -95,16 +97,18 @@ export default function TaskOverviewModal() {
               </div>
               <div className="modal-body">
                 <TaskDescription formDataChange={formDataChange} />
+                <AttachFileButton />
+                <AssignToButton />
               </div>
               <div className="modal-footer flex justify-end mt-4">
                 <button
-                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-sm mr-2"
                   onClick={handleClose}
                 >
                   Exit
                 </button>
                 <button className="addTaskBtn text-black font-bold py-2 px-4 rounded-sm flex items-center">
-                  <BiBookAdd size={19} className="mr-1" /> Save changes
+                  <BiBookAdd size={19} className="mr-1" /> Create Task
                 </button>
               </div>
             </div>
