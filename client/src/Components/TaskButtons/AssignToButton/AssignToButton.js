@@ -10,7 +10,7 @@ export default function AssignToButton() {
     <Dropdown>
       <Dropdown.Toggle
         id="dropdown-basic"
-        className="rounded-sm hover:scale-105 font-semibold flex items-center dropdownBtn text-black"
+        className="rounded-sm hover:scale-105 flex items-center dropdownBtn text-black"
       >
         <span>{assignedTo}</span>
         <div className="flex-grow"></div>

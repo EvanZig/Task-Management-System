@@ -25,23 +25,26 @@ export default function TaskDescription(props) {
     <div className="descriptionWrapper">
       <div className="flex justify-between ">
         <label className="text-semibold ">Description</label>
-        <div className="justify-end items-end border-2 mb-1 px-1 pt-1 rounded-lg ">
+        <div
+          className="justify-end items-end border-2 px-1 pt-1 border-black bg-gray-100 text-black mr-1"
+          style={{ borderRadius: '8px 8px 0 0', borderBottomColor: 'white' }}
+        >
           <button className="hover:cursor-pointer mr-2 hover:scale-110">
-            <FaBold size={20} onClick={boldClick} />
+            <FaBold size={18} onClick={boldClick} />
           </button>
           <button className="hover:cursor-pointer mr-2 hover:scale-110">
-            <FaUnderline size={19} onClick={underlineClick} />
+            <FaUnderline size={17} onClick={underlineClick} />
           </button>
           <button className="hover:cursor-pointer mr-2 hover:scale-110">
-            <FaItalic size={20} onClick={underlineClick} />
+            <FaItalic size={18} onClick={underlineClick} />
           </button>
           <button className="hover:cursor-pointer mr-1 hover:scale-110">
-            <FaCode size={20} onClick={codeClick} />
+            <FaCode size={18} onClick={codeClick} />
           </button>
         </div>
       </div>
       <textarea
-        className="text-black resize-none w-[100%] rounded p-1 text-sm line titleInput"
+        className="text-black resize-none w-[100%] rounded p-1 text-sm line titleInput bg-gray-100"
         rows={6}
       >
         Hello from description
