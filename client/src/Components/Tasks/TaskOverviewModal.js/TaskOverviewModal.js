@@ -6,6 +6,7 @@ import { BiBookAdd } from 'react-icons/bi'
 import TaskDescription from './TaskDescription'
 import AttachFileButton from '../../TaskButtons/AttachFileButton/AttachFileButton'
 import AssignToButton from '../../TaskButtons/AssignToButton/AssignToButton'
+import TaskDueDate from './TaskDueDate'
 
 export default function TaskOverviewModal() {
   const [taskData, setTaskData] = useState({
@@ -70,7 +71,10 @@ export default function TaskOverviewModal() {
           >
             <div className="modal-content">
               <div className="modal-header flex justify-between items-center mb-4">
-                <div className="w-[90%] min-h-9" onClick={titleEdit}>
+                <div
+                  className="w-[90%] min-h-9 hover:cursor-pointer"
+                  onClick={titleEdit}
+                >
                   {isEditing ? (
                     <input
                       type="text"
@@ -98,9 +102,12 @@ export default function TaskOverviewModal() {
               <div className="modal-body">
                 <TaskDescription formDataChange={formDataChange} />
                 <AttachFileButton />
-                <AssignToButton />
+                <div className="flex items-center justify-start mt-3">
+                  <AssignToButton />
+                  <TaskDueDate />
+                </div>
               </div>
-              <div className="modal-footer flex justify-end mt-4">
+              <div className="modal-footer flex justify-end mt-8">
                 <button
                   className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-sm mr-2"
                   onClick={handleClose}

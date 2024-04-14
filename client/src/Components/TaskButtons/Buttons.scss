@@ -1,0 +1,39 @@
+$green: #e8f7ca;
+
+.dropdownBtn {
+  background-color: $green;
+  min-width: 8rem !important;
+  border: none;
+}
+
+.dropdownBtn::after {
+  border: none;
+}
+
+.dropdownBtn:hover {
+  background-color: $green;
+  border: none;
+}
+
+.dropdownBtn:active {
+  background-color: $green !important;
+  border: none;
+}
+
+.btn-check:checked + .btn,
+:not(.btn-check) + .btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+  background-color: $green !important;
+  border: none;
+}
+
+.dropdown-menu {
+  border-radius: 0.14rem;
+  margin-left: 3px;
+}
+
+.dueDateBtn {
+  background-color: $green;
+}
