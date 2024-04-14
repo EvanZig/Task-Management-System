@@ -48,7 +48,7 @@ export default function TaskDescription(props) {
       </div>
       <textarea
         className="text-black resize-none w-[100%] rounded p-1 text-sm line titleInput bg-gray-100"
-        rows={6}
+        rows={7}
       >
         Hello from description
         {/* <div onClick={props.formDataChange}>Hello from description</div> */}
