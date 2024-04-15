@@ -37,3 +37,7 @@ $green: #e8f7ca;
 .dueDateBtn {
   background-color: $green;
 }
+
+.dropdown-toggle::after {
+  display: none !important;
+}

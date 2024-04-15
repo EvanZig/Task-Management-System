@@ -7,7 +7,7 @@ import TaskDescription from './TaskDescription'
 import AttachFileButton from '../../TaskButtons/AttachFileButton/AttachFileButton'
 import AssignToButton from '../../TaskButtons/AssignToButton/AssignToButton'
 import TaskDueDate from './TaskDueDate'
-import { FaFlag } from 'react-icons/fa'
+import PriorityButton from '../../TaskButtons/PriorityButton/PriorityButton'
 
 export default function TaskOverviewModal() {
   const [taskData, setTaskData] = useState({
@@ -68,7 +68,7 @@ export default function TaskOverviewModal() {
           <div
             ref={modalRef}
             onClick={handleModalClick}
-            className="modal-container modalContainer w-[40%] p-6 rounded-lg z-50"
+            className="modal-container modalContainer w-[44%] p-6 rounded-lg z-50"
           >
             <div className="modal-content">
               <div className="modal-header flex justify-between items-center mb-4">
@@ -101,15 +101,7 @@ export default function TaskOverviewModal() {
                 </button>
               </div>
               <div className="modal-body">
-                <div
-                  className="absolute bottom-0 right-[-1.5rem] hover:cursor-pointer w-10 h-7 bg-blue-700 hover:bg-blue-900 flex justify-center items-center"
-                  style={{
-                    borderTopLeftRadius: '15px',
-                    borderBottomLeftRadius: '15px',
-                  }}
-                >
-                  <FaFlag className="h-full w-[45%]" />
-                </div>
+                <PriorityButton />
                 <TaskDescription formDataChange={formDataChange} />
                 <AttachFileButton />
                 <div className="flex items-center justify-start mt-3">
@@ -117,7 +109,7 @@ export default function TaskOverviewModal() {
                   <TaskDueDate />
                 </div>
               </div>
-              <div className="modal-footer flex justify-end mt-8">
+              <div className="modal-footer flex justify-end mt-10 mb-1">
                 <button
                   className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-sm mr-2"
                   onClick={handleClose}
