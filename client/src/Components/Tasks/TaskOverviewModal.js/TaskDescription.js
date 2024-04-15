@@ -29,7 +29,7 @@ export default function TaskDescription(props) {
           Description <TbFileDescription size={17} className="ml-1" />
         </label>
         <div
-          className="justify-end items-end border-2 px-1 pt-1 border-black bg-gray-100 text-black mr-1"
+          className="justify-end items-end border-2 px-1 pt-1 border-black bg-gray-50 text-black mr-1"
           style={{ borderRadius: '8px 8px 0 0', borderBottomColor: 'white' }}
         >
           <button className="hover:cursor-pointer mr-2 hover:scale-110">
@@ -47,8 +47,8 @@ export default function TaskDescription(props) {
         </div>
       </div>
       <textarea
-        className="text-black resize-none w-[100%] rounded p-1 text-sm line titleInput bg-gray-100"
-        rows={7}
+        className="text-black resize-none w-[100%] rounded-sm p-1 text-sm line descrArea bg-gray-50"
+        rows={11}
       >
         Hello from description
         {/* <div onClick={props.formDataChange}>Hello from description</div> */}

@@ -7,6 +7,7 @@ import TaskDescription from './TaskDescription'
 import AttachFileButton from '../../TaskButtons/AttachFileButton/AttachFileButton'
 import AssignToButton from '../../TaskButtons/AssignToButton/AssignToButton'
 import TaskDueDate from './TaskDueDate'
+import { FaFlag } from 'react-icons/fa'
 
 export default function TaskOverviewModal() {
   const [taskData, setTaskData] = useState({
@@ -53,7 +54,7 @@ export default function TaskOverviewModal() {
     <div>
       <button
         onClick={openModal}
-        className="text-white font-bold CreateTaskBtn py-2 px-3 rounded-sm flex items-center hover:scale-105"
+        className="text-black font-bold CreateTaskBtn py-2 px-3 rounded-sm flex items-center"
       >
         <FaPlus size={16} className="mr-1" />
         Create New Task
@@ -67,7 +68,7 @@ export default function TaskOverviewModal() {
           <div
             ref={modalRef}
             onClick={handleModalClick}
-            className="modal-container modalContainer w-[40rem] p-6 rounded-lg z-50"
+            className="modal-container modalContainer w-[40%] p-6 rounded-lg z-50"
           >
             <div className="modal-content">
               <div className="modal-header flex justify-between items-center mb-4">
@@ -78,7 +79,7 @@ export default function TaskOverviewModal() {
                   {isEditing ? (
                     <input
                       type="text"
-                      className="text-black font-semibold rounded-sm shadow-md p-1 w-[100%] bg-gray-100 titleInput"
+                      className="text-black font-semibold rounded-sm shadow-md p-1 w-[100%] bg-gray-50 titleInput"
                       ref={titleRef}
                       onChange={formDataChange}
                       onKeyDown={(e) => {
@@ -100,6 +101,15 @@ export default function TaskOverviewModal() {
                 </button>
               </div>
               <div className="modal-body">
+                <div
+                  className="absolute bottom-0 right-[-1.5rem] hover:cursor-pointer w-10 h-7 bg-blue-700 hover:bg-blue-900 flex justify-center items-center"
+                  style={{
+                    borderTopLeftRadius: '15px',
+                    borderBottomLeftRadius: '15px',
+                  }}
+                >
+                  <FaFlag className="h-full w-[45%]" />
+                </div>
                 <TaskDescription formDataChange={formDataChange} />
                 <AttachFileButton />
                 <div className="flex items-center justify-start mt-3">
