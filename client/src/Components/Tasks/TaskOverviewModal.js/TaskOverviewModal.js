@@ -68,7 +68,7 @@ export default function TaskOverviewModal() {
           <div
             ref={modalRef}
             onClick={handleModalClick}
-            className="modal-container modalContainer w-[44%] p-6 rounded-lg z-50"
+            className="modal-container modalContainer w-[51rem] p-6 rounded-lg z-50"
           >
             <div className="modal-content">
               <div className="modal-header flex justify-between items-center mb-4">
@@ -101,12 +101,16 @@ export default function TaskOverviewModal() {
                 </button>
               </div>
               <div className="modal-body">
-                <PriorityButton />
                 <TaskDescription formDataChange={formDataChange} />
                 <AttachFileButton />
-                <div className="flex items-center justify-start mt-3">
-                  <AssignToButton />
-                  <TaskDueDate />
+                <div className="flex items-center justify-between mt-3">
+                  <div className="flex">
+                    <AssignToButton />
+                    <TaskDueDate />
+                  </div>
+                  <div>
+                    <PriorityButton />
+                  </div>
                 </div>
               </div>
               <div className="modal-footer flex justify-end mt-10 mb-1">

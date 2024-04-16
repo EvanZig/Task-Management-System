@@ -1,46 +1,80 @@
-import React, { useState } from 'react'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import DropdownItem from 'react-bootstrap/esm/DropdownItem'
+import React, { useState, useRef, useEffect } from 'react'
 import {
-  LuArrowDownCircle,
-  LuArrowRightCircle,
-  LuFileWarning,
-} from 'react-icons/lu'
+  HiOutlineExclamationCircle,
+  HiOutlineArrowCircleRight,
+  HiOutlineArrowCircleDown,
+} from 'react-icons/hi'
+import { FaFlag } from 'react-icons/fa'
 
 export default function PriorityButton() {
-  const [color, setColor] = useState('blue')
+  const [color, setColor] = useState('yellow')
+  const [showDropdown, setShowDropdown] = useState(false)
+  const dropdownRef = useRef(null)
+  const openDropdownRef = useRef(null)
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        !openDropdownRef.current.contains(event.target)
+      ) {
+        setShowDropdown(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsideClick)
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [])
+
+  const setColorAndCloseDropdown = (selectedColor) => {
+    setColor(selectedColor)
+    setShowDropdown(false)
+  }
+
   return (
-    <DropdownButton
-      className="absolute text-white bottom-0 right-[-1.5rem]"
-      style={{
-        borderTopLeftRadius: '15px',
-        borderBottomLeftRadius: '15px',
-      }}
-      drop="start"
-    >
-      <div className="rounded-md h-[6rem] ">
-        <DropdownItem
-          className="h-1/3 flex justify-start items-center hover:bg-green-500"
-          onClick={() => setColor('green')}
-        >
-          <LuArrowDownCircle className="w-[full] h-[full]" />
-          <span className="ml-2">Low Priority</span>
-        </DropdownItem>
-        <DropdownItem
-          className="h-1/3 flex justify-start items-center hover:bg-yellow-500"
-          onClick={() => setColor('orange')}
-        >
-          <LuArrowRightCircle className="w-[full] h-[full]" />
-          <span className="ml-2">Regular Priority</span>
-        </DropdownItem>
-        <DropdownItem
-          className="h-1/3 flex justify-start items-center hover:bg-red-500"
-          onClick={() => setColor('red')}
-        >
-          <LuFileWarning className="h-[full] w-[full]" />
-          <span className="ml-2">High Priority</span>
-        </DropdownItem>
+    <div className="relative inline-block text-left">
+      <button
+        type="button"
+        className={`border-2 border-black text-black rounded-md justify-center items-center flex p-1 px-3 hover:cursor-pointer bg-${color}`}
+        onClick={() => setShowDropdown(!showDropdown)}
+        ref={openDropdownRef}
+      >
+        <FaFlag className="mr-1" />
+      </button>
+
+      <div
+        className={`origin-top-right absolute right-0 mt-2 w-44 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${
+          showDropdown ? 'visible' : 'hidden'
+        }`}
+      >
+        <div ref={dropdownRef}>
+          <button
+            className="flex items-center w-full px-3 py-2 text-sm text-black hover:bg-green-400"
+            onClick={() => setColorAndCloseDropdown('green')}
+          >
+            <HiOutlineArrowCircleDown className="h-5 w-5 mr-2" />
+            Low Priority
+          </button>
+          <button
+            className="flex items-center w-full px-3 py-2 text-sm text-black hover:bg-yellow-400 "
+            onClick={() => setColorAndCloseDropdown('yellow')}
+          >
+            <HiOutlineArrowCircleRight className="h-5 w-5 mr-2" />
+            Regular Priority
+          </button>
+          <button
+            className="flex items-center w-full px-3 py-2 text-sm text-black hover:bg-red-400 "
+            onClick={() => setColorAndCloseDropdown('red')}
+          >
+            <HiOutlineExclamationCircle className="h-5 w-5 mr-2 " />
+            High Priority
+          </button>
+        </div>
       </div>
-    </DropdownButton>
+    </div>
   )
 }
