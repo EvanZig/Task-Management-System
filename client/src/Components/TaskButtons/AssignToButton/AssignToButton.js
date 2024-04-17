@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
-import { IoIosArrowDropdown } from 'react-icons/io'
+import { IoIosArrowDown } from 'react-icons/io'
 import '../Buttons.scss'
 
 export default function AssignToButton() {
@@ -14,7 +14,7 @@ export default function AssignToButton() {
       >
         <span>{assignedTo}</span>
         <div className="flex-grow"></div>
-        <IoIosArrowDropdown size={20} className="ml-1" />
+        <IoIosArrowDown size={20} className="ml-1" />
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
