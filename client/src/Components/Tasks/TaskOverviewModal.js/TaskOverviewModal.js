@@ -73,7 +73,7 @@ export default function TaskOverviewModal() {
             <div className="modal-content">
               <div className="modal-header flex justify-between items-center mb-4">
                 <div
-                  className="w-[90%] min-h-9 hover:cursor-pointer"
+                  className="w-[90%] min-h-9 hover:cursor-text"
                   onClick={titleEdit}
                 >
                   {isEditing ? (
