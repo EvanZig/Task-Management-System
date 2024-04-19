@@ -1,5 +1,5 @@
 import React from 'react'
-import Task from '../Tasks/Task'
+import Task from '../Tasks/Task/Task'
 import './TaskWrapper.scss'
 
 export default function MyTasks(props) {
@@ -14,7 +14,9 @@ export default function MyTasks(props) {
         </div>
       </div>
       <div className="mx-2 ">
-        <Task />
+        <Task color="yellow" />
+        <Task color="green" />
+        <Task color="red" />
       </div>
     </div>
   )

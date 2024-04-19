@@ -1,0 +1,65 @@
+import React, { useState, useRef } from 'react'
+import { MdEdit, MdDelete, MdFlag } from 'react-icons/md'
+import '../../TaskButtons/Buttons.scss'
+
+export default function Task(props) {
+  const [isHovered, setIsHovered] = useState(false)
+  const menuTimeoutRef = useRef(null)
+
+  const removeMenu = () => {
+    menuTimeoutRef.current = setTimeout(() => {
+      setIsHovered(false)
+    }, 120)
+  }
+
+  const handleMenuMouseEnter = () => {
+    clearTimeout(menuTimeoutRef.current)
+  }
+
+  return (
+    <div className="relative">
+      <div
+        className={`absolute top-[-35px] right-[-10px] transition-opacity ease-in-out duration-300 ${
+          isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onMouseEnter={handleMenuMouseEnter}
+        onMouseLeave={removeMenu}
+      >
+        <div className="taskActionMenu">
+          <button
+            className="border-[1px] border-white rounded-xl bg-slate-400 hover:bg-slate-500 p-2 hover:cursor-pointer mr-[0.3rem]"
+            onClick={() => console.log('yo')}
+          >
+            <MdEdit />
+          </button>
+          <button
+            className={`border-[1px] rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-${props.color}`}
+          >
+            <MdFlag />
+          </button>
+          <button className="border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600">
+            <MdDelete />
+          </button>
+        </div>
+      </div>
+      <div
+        className="text-white rounded px-1 bg-black mb-4"
+        draggable
+        style={{ backdropFilter: 'blur(10px)' }}
+      >
+        <div
+          className={
+            'w-full h-full resize-none text-white hover:cursor-pointer py-[2px] '
+          }
+          onMouseEnter={() => {
+            clearTimeout(menuTimeoutRef.current)
+            setIsHovered(true)
+          }}
+          onMouseLeave={removeMenu}
+        >
+          {props.title} Confirm
+        </div>
+      </div>
+    </div>
+  )
+}
