@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 
-//Defining default state and creating it
 const defaultState = {
   authStatus: 'LoggedOut',
   role: '',

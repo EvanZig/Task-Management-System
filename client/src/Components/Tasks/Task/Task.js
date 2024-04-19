@@ -1,10 +1,12 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { MdEdit, MdDelete, MdFlag } from 'react-icons/md'
 import '../../TaskButtons/Buttons.scss'
+import { NotificationsContext } from '../../../Context/NotificationsContext'
 
 export default function Task(props) {
   const [isHovered, setIsHovered] = useState(false)
   const menuTimeoutRef = useRef(null)
+  const { openNotification } = useContext(NotificationsContext)
 
   const removeMenu = () => {
     menuTimeoutRef.current = setTimeout(() => {
@@ -37,7 +39,10 @@ export default function Task(props) {
           >
             <MdFlag />
           </button>
-          <button className="border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600">
+          <button
+            className="border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600"
+            onClick={() => openNotification('yo', 'yoo', 'middle')}
+          >
             <MdDelete />
           </button>
         </div>
