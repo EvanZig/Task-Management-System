@@ -1,33 +1,40 @@
 import React, { useState } from 'react'
-import { IoIosArrowDown } from 'react-icons/io'
+import { FaRegUser } from 'react-icons/fa'
+import { Dropdown, message } from 'antd'
 import '../Buttons.scss'
 
+const handleMenuClick = (clickedItem) => {
+  message.info(`clicked on ${clickedItem.key} item`)
+  clickedItem.domEvent.stopPropagation()
+}
+
+const items = [
+  {
+    label: '1st menu item',
+    key: '1',
+    icon: <FaRegUser />,
+  },
+  {
+    label: '2nd menu item',
+    key: '2',
+    icon: <FaRegUser />,
+  },
+]
 export default function AssignToButton() {
   const [assignedTo, setAssignedTo] = useState('Open For Anyone')
 
   return (
-    <></>
-    // <Dropdown>
-    //   <Dropdown.Toggle
-    //     id="dropdown-basic"
-    //     className="rounded-sm hover:scale-105 flex items-center dropdownBtn text-black"
-    //   >
-    //     <span>{assignedTo}</span>
-    //     <div className="flex-grow"></div>
-    //     <IoIosArrowDown size={20} className="ml-1" />
-    //   </Dropdown.Toggle>
-
-    //   <Dropdown.Menu>
-    //     <Dropdown.Item
-    //       href="#/action-1"
-    //       className="hover:bg-slate-300 hover:underline active:bg-slate-400"
-    //       onClick={() => setAssignedTo('changed ')}
-    //     >
-    //       Action
-    //     </Dropdown.Item>
-    //     <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    //     <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    //   </Dropdown.Menu>
-    // </Dropdown>
+    <Dropdown
+      menu={{ items, onClick: handleMenuClick }}
+      placement="right"
+      icon={<FaRegUser />}
+      trigger={['click']}
+      className="flex justify-center items-center hover:cursor-pointer rounded border-2 border-black bg-slate-400 p-3 text-black"
+    >
+      <button onClick={(e) => e.preventDefault()}>
+        Assign To
+        <FaRegUser className="ml-2" />
+      </button>
+    </Dropdown>
   )
 }
