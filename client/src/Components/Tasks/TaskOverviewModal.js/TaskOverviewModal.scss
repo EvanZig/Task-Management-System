@@ -30,12 +30,3 @@ $dark: #212121;
 .titleInput {
   outline: 2px solid $dark;
 }
-
-.descrArea {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.descrArea:focus {
-  outline: 3px solid $dark;
-}
