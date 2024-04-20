@@ -29,7 +29,7 @@ export default function AssignToButton() {
       placement="right"
       icon={<FaRegUser />}
       trigger={['click']}
-      className="flex justify-center items-center hover:cursor-pointer rounded border-2 border-black bg-slate-400 p-3 text-black"
+      className="flex justify-center items-center hover:cursor-pointer rounded border-2 border-black bg-slate-400 p-3 text-black active:bg-slate-500"
     >
       <button onClick={(e) => e.preventDefault()}>
         Assign To

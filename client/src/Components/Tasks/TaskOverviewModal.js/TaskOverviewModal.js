@@ -104,7 +104,7 @@ export default function TaskOverviewModal() {
                 <TaskDescription formDataChange={formDataChange} />
                 <AttachFileButton />
                 <div className="flex items-center justify-between mt-3">
-                  <div className="flex">
+                  <div className="flex h-11">
                     <AssignToButton />
                     <TaskDueDate />
                   </div>
