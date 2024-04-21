@@ -4,7 +4,7 @@ import { MdEditCalendar } from 'react-icons/md'
 
 export default function TaskDueDate() {
   const [isHovered, setIsHovered] = useState(false)
-  const [selectedDate, setSelectedDate] = useState(null)
+  const [selectedDate, setSelectedDate] = useState('12 / 12 / 12')
 
   const handleDateChange = (event) => {
     console.log('Date Change')
@@ -18,7 +18,7 @@ export default function TaskDueDate() {
     <div className="ml-3 flex">
       <span className="pt-4 font-semibold mx-3 text-lg">Due Date</span>
       <div
-        className="w-32 rounded-sm flex justify-between hover:cursor-pointer border-none outline-none dropdownBtn"
+        className="w-32 rounded flex justify-between hover:cursor-pointer border-none outline-none dropdownBtn"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -37,13 +37,9 @@ export default function TaskDueDate() {
               <MdEditCalendar size={18} />
             </button>
           </>
-        ) : selectedDate ? (
-          <div className="text-black flex justify-center items-center w-full border-2 border-black">
-            {selectedDate}
-          </div>
         ) : (
-          <div className="text-black flex justify-center items-center w-full bg-slate-400 border-2 border-black">
-            --/--/--
+          <div className="text-black flex justify-center rounded items-center w-full bg-slate-400 border-2 border-black">
+            {selectedDate ? selectedDate : '--/--/--'}
           </div>
         )}
       </div>

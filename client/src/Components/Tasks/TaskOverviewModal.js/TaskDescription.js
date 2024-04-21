@@ -25,7 +25,7 @@ export default function TaskDescription(props) {
 
   return (
     <div>
-      <div className="flex justify-between bg-zinc-800 text-white border-2 border-zinc-400 border-b-0">
+      <div className="flex justify-between bg-zinc-800 text-white border-2 border-zinc-400 border-b-0 rounded-t-md">
         <label className="text-semibold flex justify-center items-center pl-2">
           Description <TbFileDescription size={18} className="ml-2" />
         </label>
@@ -48,7 +48,7 @@ export default function TaskDescription(props) {
         </div>
       </div>
       <textarea
-        className="resize-none w-full rounded-sm px-4 py-3 text-sm bg-zinc-700 outline-none border-2 border-zinc-400 border-solid focus:border-blue-400"
+        className="resize-none w-full rounded-b-md px-4 py-3 text-sm bg-zinc-700 outline-none border-2 border-zinc-400 border-solid focus:border-blue-400"
         rows={9}
         onFocus={() => setIsTyping(true)}
         onAbort={() => setIsTyping(false)}
