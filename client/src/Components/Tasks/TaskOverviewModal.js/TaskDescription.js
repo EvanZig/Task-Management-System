@@ -24,33 +24,32 @@ export default function TaskDescription(props) {
   }
 
   return (
-    <div className="">
-      <div
-        className={`flex justify-between bg-zinc-600 text-white border-2 border-transparent ${
-          isTyping ? 'border-black' : ' '
-        }`}
-      >
+    <div>
+      <div className="flex justify-between bg-zinc-800 text-white border-2 border-zinc-400 border-b-0">
         <label className="text-semibold flex justify-center items-center pl-2">
-          Description <TbFileDescription size={17} className="ml-1" />
+          Description <TbFileDescription size={18} className="ml-2" />
         </label>
-        <div className="justify-end items-end px-1 pt-1 mr-1">
+        <div className="justify-end items-end px-1 pt-1 mr-1 flex mb-2">
           <button className="hover:cursor-pointer mr-2 hover:scale-110">
-            <FaBold size={18} onClick={boldClick} />
+            <FaBold size={20} onClick={boldClick} />
           </button>
+          <div className="border-l border-gray-400 h-6 mr-2"></div>
           <button className="hover:cursor-pointer mr-2 hover:scale-110">
-            <FaUnderline size={17} onClick={underlineClick} />
+            <FaUnderline size={19} onClick={underlineClick} />
           </button>
+          <div className="border-l border-gray-400 h-6 mr-2"></div>
           <button className="hover:cursor-pointer mr-2 hover:scale-110">
-            <FaItalic size={18} onClick={underlineClick} />
+            <FaItalic size={20} onClick={underlineClick} />
           </button>
+          <div className="border-l border-gray-400 h-6 mr-2"></div>
           <button className="hover:cursor-pointer mr-1 hover:scale-110">
-            <FaCode size={18} onClick={codeClick} />
+            <FaCode size={20} onClick={codeClick} />
           </button>
         </div>
       </div>
       <textarea
-        className="text-black resize-none w-full rounded-sm p-2 text-sm bg-gray-50 outline-none border-2 border-solid focus:border-black"
-        rows={11}
+        className="resize-none w-full rounded-sm px-4 py-3 text-sm bg-zinc-700 outline-none border-2 border-zinc-400 border-solid focus:border-blue-400"
+        rows={9}
         onFocus={() => setIsTyping(true)}
         onAbort={() => setIsTyping(false)}
       >
