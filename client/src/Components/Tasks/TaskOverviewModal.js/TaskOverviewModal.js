@@ -71,7 +71,7 @@ export default function TaskOverviewModal() {
             className="modal-container modalContainer w-[51rem] p-6 rounded-lg z-50"
           >
             <div className="modal-content">
-              <div className="modal-header flex justify-between items-center mb-4">
+              <div className="modal-header flex justify-between items-center mb-6">
                 <div
                   className="w-[90%] min-h-9 hover:cursor-text"
                   onClick={titleEdit}
@@ -94,7 +94,7 @@ export default function TaskOverviewModal() {
                   )}
                 </div>
                 <button
-                  className="text-white  hover:scale-125"
+                  className="text-white  hover:scale-125 hover:cursor-default"
                   onClick={handleClose}
                 >
                   <RiCloseLine size={26} />
