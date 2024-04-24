@@ -8,6 +8,7 @@ export default function TaskDescription(props) {
   const [isItalic, setIsItalic] = useState(false)
   const [isCode, setIsCode] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
+  const [selectedText, setSelectedText] = useState('')
 
   const boldClick = () => {
     console.log('bold clicked')
@@ -27,6 +28,15 @@ export default function TaskDescription(props) {
   const codeClick = () => {
     console.log('code clicked')
     setIsCode(!isCode)
+  }
+
+  const handleTextSelect = () => {
+    const selection = window.getSelection()
+    if (selection) {
+      const selectedContent = selection.toString()
+      setSelectedText(selectedContent)
+      console.log(selectedContent)
+    }
   }
 
   return (
@@ -72,7 +82,8 @@ export default function TaskDescription(props) {
       <textarea
         className="resize-none w-full rounded-b-md px-4 py-3 text-sm bg-zinc-700 outline-none border-2 border-zinc-400 border-solid focus:border-blue-400"
         rows={9}
-        onFocus={() => setIsTyping(true)}
+        onMouseUp={handleTextSelect}
+        onBlur={() => setIsTyping(false)}
         onAbort={() => setIsTyping(false)}
       >
         . . .
