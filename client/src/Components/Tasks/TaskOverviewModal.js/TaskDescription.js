@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaBold, FaCode, FaUnderline, FaItalic } from 'react-icons/fa'
 import { TbFileDescription } from 'react-icons/tb'
+import '../Tasks.scss'
 
 export default function TaskDescription(props) {
   const [isBold, setIsBold] = useState(false)
@@ -80,7 +81,7 @@ export default function TaskDescription(props) {
         </div>
       </div>
       <textarea
-        className="resize-none w-full rounded-b-md px-4 py-3 text-sm bg-zinc-700 outline-none border-2 border-zinc-400 border-solid focus:border-blue-400"
+        className="resize-none w-full rounded-b-md px-4 py-3 text-sm bg-zinc-700 outline-none border-2 border-zinc-400 border-solid focus:border-blue-400 customScrlbar"
         rows={9}
         onMouseUp={handleTextSelect}
         onBlur={() => setIsTyping(false)}
