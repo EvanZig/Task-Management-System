@@ -11,7 +11,7 @@ export default function Task(props) {
   const removeMenu = () => {
     menuTimeoutRef.current = setTimeout(() => {
       setIsHovered(false)
-    }, 110)
+    }, 90)
   }
 
   const handleMenuMouseEnter = () => {
@@ -48,7 +48,7 @@ export default function Task(props) {
         </div>
       </div>
       <div
-        className="text-white rounded px-1 bg-black mb-4"
+        className="text-white rounded px-1 bg-black mb-4 border-2 border-black hover:border-blue-400"
         draggable
         style={{ backdropFilter: 'blur(10px)' }}
       >
