@@ -4,7 +4,7 @@ import { MdEditCalendar } from 'react-icons/md'
 
 export default function TaskDueDate() {
   const [isHovered, setIsHovered] = useState(false)
-  const [selectedDate, setSelectedDate] = useState('12 / 12 / 12')
+  const [selectedDate, setSelectedDate] = useState(null)
 
   const handleDateChange = (event) => {
     console.log('Date Change')
@@ -39,7 +39,7 @@ export default function TaskDueDate() {
           </>
         ) : (
           <div className="text-black flex justify-center rounded items-center w-full bg-slate-400 border-2 border-black">
-            {selectedDate ? selectedDate : '--/--/--'}
+            {selectedDate ? selectedDate : '-- / -- / --'}
           </div>
         )}
       </div>
