@@ -1,18 +1,35 @@
 import React from 'react'
+import { Dropdown } from 'antd'
+
+const items = [
+  {
+    label: <a href="https://www.antgroup.com">1st menu item</a>,
+    key: '0',
+  },
+  {
+    label: <a href="https://www.aliyun.com">2nd menu item</a>,
+    key: '1',
+  },
+  {
+    type: 'divider',
+  },
+  {
+    label: '3rd menu item',
+    key: '3',
+  },
+]
 
 export default function Topbar() {
-  const changeTemplate = () => {
-    console.log('Template Changed')
-  }
   return (
-    <div>
+    <div className="flex justify-between">
       Topbar Template
-      <button
-        className="border-2 border-black rounded-lg bg-slate-200 text-black hover:bg-slate-300"
-        onClick={changeTemplate}
+      <Dropdown
+        menu={{ items }}
+        trigger={['click']}
+        className="m-4 text-lg p-2 border-2 border-white rounded-lg hover:bg-white hover:text-black"
       >
-        Template
-      </button>
+        <button onClick={(e) => e.preventDefault()}>Template</button>
+      </Dropdown>
     </div>
   )
 }
