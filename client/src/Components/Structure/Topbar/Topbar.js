@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dropdown } from 'antd'
+import NotificationDropdown from '../../NotificationDropdown/NotificationDropdown'
 
 const items = [
   {
@@ -23,13 +24,16 @@ export default function Topbar() {
   return (
     <div className="flex justify-between">
       Topbar Template
-      <Dropdown
-        menu={{ items }}
-        trigger={['click']}
-        className="m-4 text-lg p-2 border-2 border-white rounded-lg hover:bg-white hover:text-black"
-      >
-        <button onClick={(e) => e.preventDefault()}>Template</button>
-      </Dropdown>
+      <div className="flex justify-center items-center">
+        <Dropdown
+          menu={{ items }}
+          trigger={['click']}
+          className="m-4 text-lg p-2 border-2 border-white rounded-lg hover:bg-white hover:text-black"
+        >
+          <button onClick={(e) => e.preventDefault()}>Template</button>
+        </Dropdown>
+        <NotificationDropdown />
+      </div>
     </div>
   )
 }
