@@ -4,6 +4,7 @@ import AuthProvider from './Context/GlobalContext'
 import TaskOverviewModal from './Components/Tasks/TaskOverviewModal.js/TaskOverviewModal'
 import TaskWrapper from './Components/TaskWrapper/TaskWrapper'
 import Structure from './Components/Structure/Structure'
+import CreateList from './Components/List/CreateList'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Structure>
           <TaskOverviewModal />
           {/* <AppRoutes /> */}
+          <CreateList />
           <TaskWrapper />
         </Structure>
       </AuthProvider>
