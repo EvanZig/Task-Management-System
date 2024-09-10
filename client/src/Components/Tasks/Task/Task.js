@@ -19,7 +19,7 @@ export default function Task(props) {
   }
 
   return (
-    <div className="relative">
+    <div className='relative'>
       <div
         className={`absolute top-[-35px] right-[-10px] transition-opacity ease-in-out duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -27,9 +27,9 @@ export default function Task(props) {
         onMouseEnter={handleMenuMouseEnter}
         onMouseLeave={removeMenu}
       >
-        <div className="taskActionMenu">
+        <div className='taskActionMenu'>
           <button
-            className="border-[1px] border-white rounded-xl bg-slate-400 hover:bg-slate-500 p-2 hover:cursor-pointer mr-[0.3rem]"
+            className='border-[1px] border-white rounded-xl bg-slate-400 hover:bg-slate-500 p-2 hover:cursor-pointer mr-[0.3rem]'
             onClick={() => console.log('yo')}
           >
             <MdEdit />
@@ -40,7 +40,7 @@ export default function Task(props) {
             <MdFlag />
           </button>
           <button
-            className="border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600"
+            className='border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600'
             onClick={() => openNotification('yo', 'yoo', 'middle')}
           >
             <MdDelete />
@@ -48,7 +48,7 @@ export default function Task(props) {
         </div>
       </div>
       <div
-        className="text-white rounded px-1 bg-black mb-4 border-2 border-black hover:border-blue-400"
+        className='text-white rounded px-1 bg-black mb-4 border-2 border-black hover:border-blue-400'
         draggable
         style={{ backdropFilter: 'blur(10px)' }}
       >
