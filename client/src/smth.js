@@ -24,21 +24,21 @@ const App = () => {
     () => ({
       name: 'Ant Design',
     }),
-    []
+    [],
   )
   return (
     <Context.Provider value={contextValue}>
       {contextHolder}
       <Space>
         <Button
-          type="primary"
+          type='primary'
           onClick={() => openNotification('topLeft')}
           icon={<RadiusUpleftOutlined />}
         >
           topLeft
         </Button>
         <Button
-          type="primary"
+          type='primary'
           onClick={() => openNotification('topRight')}
           icon={<RadiusUprightOutlined />}
         >
@@ -48,14 +48,14 @@ const App = () => {
       <Divider />
       <Space>
         <Button
-          type="primary"
+          type='primary'
           onClick={() => openNotification('bottomLeft')}
           icon={<RadiusBottomleftOutlined />}
         >
           bottomLeft
         </Button>
         <Button
-          type="primary"
+          type='primary'
           onClick={() => openNotification('bottomRight')}
           icon={<RadiusBottomrightOutlined />}
         >

@@ -12,7 +12,7 @@ export default function AppRoutes() {
       </AuthIsNotSignedIn>
       <AuthIsSignedIn>
         <Routes>
-          <Route path="/" element={<ProjectSelectionPage />} />
+          <Route path='/' element={<ProjectSelectionPage />} />
         </Routes>
         {/* <Logout /> */}Helloo from signed in Routes
       </AuthIsSignedIn>

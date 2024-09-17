@@ -8,7 +8,7 @@ import CreateList from './Components/List/CreateList'
 
 export default function App() {
   return (
-    <div className="pageWrap">
+    <div className='pageWrap'>
       <AuthProvider>
         <Structure>
           <TaskOverviewModal />

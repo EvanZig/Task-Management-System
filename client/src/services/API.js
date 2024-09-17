@@ -20,7 +20,7 @@ const useRequest = () => {
         return config
       },
 
-      (error) => Promise.reject(error)
+      (error) => Promise.reject(error),
     )
 
     instance.interceptors.response.use(
@@ -36,13 +36,13 @@ const useRequest = () => {
         const errorMessage = err?.response?.data?.error
           ? err?.response?.data?.error
           : err?.response?.data?.message
-          ? err?.response?.data?.message
-          : 'Unexpected error'
+            ? err?.response?.data?.message
+            : 'Unexpected error'
 
         toast.error(errorMessage)
 
         return Promise.reject(err)
-      }
+      },
     )
 
     return instance

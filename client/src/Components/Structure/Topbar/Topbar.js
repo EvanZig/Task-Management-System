@@ -4,11 +4,11 @@ import NotificationDropdown from '../../NotificationDropdown/NotificationDropdow
 
 const items = [
   {
-    label: <a href="https://www.antgroup.com">1st menu item</a>,
+    label: <a href='https://www.antgroup.com'>1st menu item</a>,
     key: '0',
   },
   {
-    label: <a href="https://www.aliyun.com">2nd menu item</a>,
+    label: <a href='https://www.aliyun.com'>2nd menu item</a>,
     key: '1',
   },
   {
@@ -22,13 +22,13 @@ const items = [
 
 export default function Topbar() {
   return (
-    <div className="flex justify-between">
+    <div className='flex justify-between'>
       Topbar Template
-      <div className="flex justify-center items-center">
+      <div className='flex justify-center items-center'>
         <Dropdown
           menu={{ items }}
           trigger={['click']}
-          className="m-4 text-lg p-2 border-2 border-white rounded-lg hover:bg-white hover:text-black"
+          className='m-4 text-lg p-2 border-2 border-white rounded-lg hover:bg-white hover:text-black'
         >
           <button onClick={(e) => e.preventDefault()}>Template</button>
         </Dropdown>

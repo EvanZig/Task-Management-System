@@ -26,14 +26,14 @@ export default function AssignToButton() {
   return (
     <Dropdown
       menu={{ items, onClick: handleMenuClick }}
-      placement="right"
+      placement='right'
       icon={<FaRegUser />}
       trigger={['click']}
-      className="flex justify-center items-center hover:cursor-pointer rounded border-2 border-black bg-slate-400 p-3 text-black active:bg-slate-500"
+      className='flex justify-center items-center hover:cursor-pointer rounded border-2 border-black bg-slate-400 p-3 text-black active:bg-slate-500'
     >
       <button onClick={(e) => e.preventDefault()}>
         Assign To
-        <FaRegUser className="ml-2" />
+        <FaRegUser className='ml-2' />
       </button>
     </Dropdown>
   )

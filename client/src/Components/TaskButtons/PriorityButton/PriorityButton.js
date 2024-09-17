@@ -36,14 +36,14 @@ export default function PriorityButton() {
   }
 
   return (
-    <div className="relative inline-block text-left">
+    <div className='relative inline-block text-left'>
       <button
-        type="button"
+        type='button'
         className={`border-2 border-black text-black rounded-md justify-center items-center flex p-1 px-3 hover:cursor-pointer bg-${color}`}
         onClick={() => setShowDropdown(!showDropdown)}
         ref={openDropdownRef}
       >
-        <FaFlag className="mr-1" />
+        <FaFlag className='mr-1' />
       </button>
 
       <div
@@ -53,24 +53,24 @@ export default function PriorityButton() {
       >
         <div ref={dropdownRef}>
           <button
-            className="flex items-center w-full px-3 py-2 text-sm text-black hover:bg-green-400"
+            className='flex items-center w-full px-3 py-2 text-sm text-black hover:bg-green-400'
             onClick={() => setColorAndCloseDropdown('green')}
           >
-            <HiOutlineArrowCircleDown className="h-5 w-5 mr-2" />
+            <HiOutlineArrowCircleDown className='h-5 w-5 mr-2' />
             Low Priority
           </button>
           <button
-            className="flex items-center w-full px-3 py-2 text-sm text-black hover:bg-yellow-400 "
+            className='flex items-center w-full px-3 py-2 text-sm text-black hover:bg-yellow-400 '
             onClick={() => setColorAndCloseDropdown('yellow')}
           >
-            <HiOutlineArrowCircleRight className="h-5 w-5 mr-2" />
+            <HiOutlineArrowCircleRight className='h-5 w-5 mr-2' />
             Regular Priority
           </button>
           <button
-            className="flex items-center w-full px-3 py-2 text-sm text-black hover:bg-red-400 "
+            className='flex items-center w-full px-3 py-2 text-sm text-black hover:bg-red-400 '
             onClick={() => setColorAndCloseDropdown('red')}
           >
-            <HiOutlineExclamationCircle className="h-5 w-5 mr-2 " />
+            <HiOutlineExclamationCircle className='h-5 w-5 mr-2 ' />
             High Priority
           </button>
         </div>

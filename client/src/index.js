@@ -10,5 +10,5 @@ root.render(
     <NotificationsProvider>
       <App />
     </NotificationsProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 )
