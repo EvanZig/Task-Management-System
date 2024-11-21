@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaRegTrashAlt } from 'react-icons/fa'
 import { MdEditCalendar } from 'react-icons/md'
+import { NotificationsContext } from '../../../Context/NotificationsContext'
 
 export default function TaskDueDate() {
   const [isHovered, setIsHovered] = useState(false)
   const [selectedDate, setSelectedDate] = useState(null)
+  const { openNotification } = useContext(NotificationsContext)
 
   const handleDateChange = (event) => {
     console.log('Date Change')
   }
 
   const handleDelete = () => {
-    console.log('deleted')
+    openNotification('Deleted', 'removed date', 'middle')
   }
 
   return (
