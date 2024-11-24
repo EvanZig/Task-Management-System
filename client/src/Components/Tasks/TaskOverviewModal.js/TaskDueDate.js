@@ -9,7 +9,7 @@ export default function TaskDueDate() {
   const { openNotification } = useContext(NotificationsContext)
 
   const handleDateChange = (event) => {
-    console.log('Date Change')
+    openNotification('Date edited', 'Date Changed', 'top')
   }
 
   const handleDelete = () => {
