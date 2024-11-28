@@ -9,11 +9,14 @@ export default function TaskDueDate() {
   const { openNotification } = useContext(NotificationsContext)
 
   const handleDateChange = (event) => {
-    openNotification('Date edited', 'Date Changed', 'top')
+    const newDate = event.target.value
+    setSelectedDate(newDate)
+    openNotification('Date edited', `Date Changed to ${newDate}`, 'top')
   }
 
   const handleDelete = () => {
-    openNotification('Deleted', 'removed date', 'middle')
+    setSelectedDate(null)
+    openNotification('Deleted', 'Removed date', 'middle')
   }
 
   return (
@@ -27,22 +30,22 @@ export default function TaskDueDate() {
         {isHovered ? (
           <>
             <button
-              className=' w-1/3 items-center justify-center flex text-black bg-red-600 hover:scale-105 border-2 border-black'
+              className='w-1/3 items-center justify-center flex text-black bg-red-600 hover:scale-105 border-2 border-black'
               onClick={handleDelete}
             >
               <FaRegTrashAlt size={18} />
             </button>
-            <button
-              className='text-black w-2/3 bg-blue-400 items-center justify-center flex hover:scale-105 border-2 border-black'
-              onClick={handleDateChange}
-            >
-              <MdEditCalendar size={18} />
-            </button>
+            <input
+              type='date'
+              className='w-2/3 items-center justify-center flex text-black bg-yellow-500 hover:scale-105 border-2 border-black'
+              value={selectedDate || ''}
+              onChange={handleDateChange}
+            />
           </>
         ) : (
-          <div className='text-black flex justify-center rounded items-center w-full bg-slate-400 border-2 border-black'>
-            {selectedDate ? selectedDate : '-- / -- / --'}
-          </div>
+          <span className='w-full items-center justify-center flex text-black bg-yellow-500 border-2 border-black'>
+            {selectedDate ? selectedDate : 'No Date'}
+          </span>
         )}
       </div>
     </div>
