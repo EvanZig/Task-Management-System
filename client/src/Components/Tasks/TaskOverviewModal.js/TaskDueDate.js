@@ -35,7 +35,7 @@ export default function TaskDueDate() {
             >
               <FaRegTrashAlt size={18} />
             </button>
-            <input
+            <button
               type='date'
               className='w-2/3 items-center justify-center flex text-black bg-yellow-500 hover:scale-105 border-2 border-black'
               value={selectedDate || ''}
