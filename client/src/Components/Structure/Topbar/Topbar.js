@@ -23,7 +23,7 @@ const items = [
 export default function Topbar() {
   return (
     <div className='flex justify-between'>
-      Topbar Template
+      ..
       <div className='flex justify-center items-center'>
         <Dropdown
           menu={{ items }}
