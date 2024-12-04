@@ -78,7 +78,7 @@ export default function TaskDescription(props) {
           <div className='border-l border-gray-400 h-6 mr-2'></div>
           <button
             className={`hover:cursor-pointer mr-2 hover:scale-110 ${
-              isCode ? 'text-blue-400 scale-110' : ''
+              isCode && 'text-blue-400 scale-110'
             }`}
           >
             <FaCode size={20} onClick={codeClick} />
