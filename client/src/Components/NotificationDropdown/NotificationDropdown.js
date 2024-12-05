@@ -4,11 +4,7 @@ import { IoMdNotificationsOutline } from 'react-icons/io'
 
 const items = [
   {
-    label: <a href='https://www.antgroup.com'>1st menu item</a>,
-    key: '0',
-  },
-  {
-    label: <a href='https://www.aliyun.com'>2nd menu item</a>,
+    label: <a href='https://www.aliyun.com'>1nd menu item</a>,
     key: '1',
   },
   {
