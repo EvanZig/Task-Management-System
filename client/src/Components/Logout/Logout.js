@@ -2,5 +2,13 @@ import React from 'react'
 import '../ComponentGeneralStyles.scss'
 
 export default function Logout() {
-  return <div>Hello from logout</div>
+  const handleLogout = async () => {
+    console.log('logout')
+  }
+
+  return (
+    <button className='bg-red-500' onClick={handleLogout}>
+      Logout
+    </button>
+  )
 }
