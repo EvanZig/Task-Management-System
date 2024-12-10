@@ -4,19 +4,8 @@ import NotificationDropdown from '../../NotificationDropdown/NotificationDropdow
 
 const items = [
   {
-    label: <a href='https://www.antgroup.com'>1st menu item</a>,
+    label: <a href='https://www.antgroup.com'>test menu item</a>,
     key: '0',
-  },
-  {
-    label: <a href='https://www.aliyun.com'>2nd menu item</a>,
-    key: '1',
-  },
-  {
-    type: 'divider',
-  },
-  {
-    label: '3rd menu item',
-    key: '3',
   },
 ]
 
