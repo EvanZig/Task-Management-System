@@ -15,17 +15,19 @@ export default function TaskOverviewModal() {
     description: '',
   })
   const [isEditing, setIsEditing] = useState(false)
-  const titleRef = useRef(null)
   const [show, setShow] = useState(false)
+  const titleRef = useRef(null)
   const modalRef = useRef(null)
 
   const openModal = () => setShow(true)
-  const handleClose = () => setShow(false)
+  const handleClose = () => {
+    setShow(false)
+    setIsEditing(false)
+  }
 
   const handleOverlayClick = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       handleClose()
-      setIsEditing(false)
     }
   }
 
@@ -34,7 +36,6 @@ export default function TaskOverviewModal() {
       setIsEditing(false)
     }
   }
-
   const titleEdit = () => {
     setIsEditing(true)
   }
