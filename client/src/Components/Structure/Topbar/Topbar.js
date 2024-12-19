@@ -11,7 +11,7 @@ const items = [
 
 export default function Topbar() {
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between bg-[#333333] p-4'>
       ..
       <div className='flex justify-center items-center'>
         <Dropdown
