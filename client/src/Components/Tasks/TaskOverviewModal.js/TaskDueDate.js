@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { FaRegTrashAlt } from 'react-icons/fa'
-import { MdEditCalendar } from 'react-icons/md'
 import { NotificationsContext } from '../../../Context/NotificationsContext'
 
 export default function TaskDueDate() {
