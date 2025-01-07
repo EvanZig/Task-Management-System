@@ -9,6 +9,7 @@ module.exports = {
         softPink: '#F9A8D4',
         darkPink: '#D97AB0',
         softLavender: '#B9A1D9',
+        darkYellow: '#E2B714',
       },
     },
   },
