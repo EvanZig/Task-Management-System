@@ -47,7 +47,7 @@ export default function TaskDescription(props) {
 
   return (
     <div>
-      <div className='flex justify-between bg-zinc-800 text-white border-2 border-zinc-400 border-b-0 rounded-t-md'>
+      <div className='flex justify-between bg-zinc-800 text-white border-2 border-darkYellow border-b-0 rounded-t-md'>
         <label className='text-semibold flex justify-center items-center pl-2'>
           Description <TbFileDescription size={18} className='ml-2' />
         </label>
