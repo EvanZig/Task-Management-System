@@ -1,6 +1,5 @@
 import React from 'react'
 import Task from '../Tasks/Task/Task'
-import './TaskWrapper.scss'
 
 export default function MyTasks(props) {
   return (
