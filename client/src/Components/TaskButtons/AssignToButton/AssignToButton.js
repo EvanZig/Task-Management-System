@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FaRegUser } from 'react-icons/fa'
 import { Dropdown, message } from 'antd'
 import '../Buttons.scss'
@@ -21,8 +21,6 @@ const items = [
   },
 ]
 export default function AssignToButton() {
-  const [assignedTo, setAssignedTo] = useState('Open For Anyone')
-
   return (
     <Dropdown
       menu={{ items, onClick: handleMenuClick }}
