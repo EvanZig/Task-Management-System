@@ -7,10 +7,6 @@ const items = [
     label: <a href='https://www.antgroup.com'>test menu item</a>,
     key: '0',
   },
-  {
-    label: <a href='https://www.antgroup.com'>test menu item 2</a>,
-    key: '0',
-  },
 ]
 
 export default function Topbar() {
