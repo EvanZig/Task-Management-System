@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 export default function CreateList() {
   const [addList, setAddList] = useState(false)
@@ -6,8 +6,11 @@ export default function CreateList() {
 
   const handleAddList = () => {
     setAddList(true)
-    addListRef.current.focus()
   }
+
+  useEffect(() => {
+    addListRef.current?.focus()
+  }, [addList])
 
   return (
     <div>
