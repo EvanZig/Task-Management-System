@@ -119,7 +119,7 @@ export default function TaskOverviewModal() {
                   className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-sm mr-2'
                   onClick={handleClose}
                 >
-                  Exit
+                  exit
                 </button>
                 <button className='addTaskBtn text-black font-bold py-2 px-4 rounded-sm flex items-center'>
                   <BiBookAdd size={19} className='mr-1' /> Create Task
