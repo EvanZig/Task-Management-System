@@ -58,7 +58,7 @@ export default function TaskOverviewModal() {
         className='text-black font-bold CreateTaskBtn py-2 px-3 rounded-sm flex items-center'
       >
         <FaPlus size={16} className='mr-1' />
-        Create New Task
+        Create New Task +
       </button>
       {show && (
         <div
