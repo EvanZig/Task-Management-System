@@ -98,7 +98,7 @@ export default function TaskOverviewModal() {
                   className='text-white  hover:scale-125 hover:cursor-default'
                   onClick={handleClose}
                 >
-                  <RiCloseLine size={26} />
+                  <RiCloseLine size={28} />
                 </button>
               </div>
               <div className='modal-body'>
