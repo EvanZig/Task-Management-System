@@ -30,7 +30,7 @@ export default function Task(props) {
         <div className='taskActionMenu'>
           <button
             className='border-[1px] border-white rounded-xl bg-slate-400 hover:bg-slate-500 p-2 hover:cursor-pointer mr-[0.3rem]'
-            onClick={() => console.log('yo')}
+            onClick={() => openNotification('Edit Button', 'Clicked', 'middle')}
           >
             <MdEdit />
           </button>
