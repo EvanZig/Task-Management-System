@@ -24,6 +24,11 @@ const items = [
     key: '3',
     icon: <FaRegUser />,
   },
+  {
+    label: '4st menu item',
+    key: '4',
+    icon: <FaRegUser />,
+  },
 ]
 export default function AssignToButton() {
   return (
