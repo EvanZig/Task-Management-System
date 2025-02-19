@@ -29,6 +29,11 @@ const items = [
     key: '4',
     icon: <FaRegUser />,
   },
+  {
+    label: 'LogOUt',
+    key: '5',
+    icon: <FaRegUser />,
+  },
 ]
 export default function AssignToButton() {
   return (
