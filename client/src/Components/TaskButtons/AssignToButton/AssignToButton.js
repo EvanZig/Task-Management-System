@@ -34,6 +34,11 @@ const items = [
     key: '5',
     icon: <FaRegUser />,
   },
+  {
+    label: 'Swich user',
+    key: '6',
+    icon: <FaRegUser />,
+  },
 ]
 export default function AssignToButton() {
   return (
