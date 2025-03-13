@@ -6,7 +6,6 @@ import { NotificationsContext } from '../../../Context/NotificationsContext'
 export default function Task(props) {
   const [isHovered, setIsHovered] = useState(false)
   const menuTimeoutRef = useRef(null)
-  const { openNotification } = useContext(NotificationsContext)
 
   const removeMenu = () => {
     menuTimeoutRef.current = setTimeout(() => {
@@ -28,10 +27,7 @@ export default function Task(props) {
         onMouseLeave={removeMenu}
       >
         <div className='taskActionMenu'>
-          <button
-            className='border-[1px] border-white rounded-xl bg-slate-400 hover:bg-slate-500 p-2 hover:cursor-pointer mr-[0.3rem]'
-            onClick={() => openNotification('Edit Button', 'Clicked', 'middle')}
-          >
+          <button className='border-[1px] border-white rounded-xl bg-slate-400 hover:bg-slate-500 p-2 hover:cursor-pointer mr-[0.3rem]'>
             <MdEdit />
           </button>
           <button
@@ -39,10 +35,7 @@ export default function Task(props) {
           >
             <MdFlag />
           </button>
-          <button
-            className='border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600'
-            onClick={() => openNotification('yo', 'yoo', 'middle')}
-          >
+          <button className='border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600'>
             <MdDelete />
           </button>
         </div>
