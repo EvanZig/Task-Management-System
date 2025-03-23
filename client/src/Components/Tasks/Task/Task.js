@@ -6,6 +6,7 @@ import { NotificationsContext } from '../../../Context/NotificationsContext'
 export default function Task(props) {
   const [isHovered, setIsHovered] = useState(false)
   const menuTimeoutRef = useRef(null)
+  const { setNotification } = useContext(NotificationsContext)
 
   const removeMenu = () => {
     menuTimeoutRef.current = setTimeout(() => {
