@@ -11,7 +11,7 @@ export default function Task(props) {
   const removeMenu = () => {
     menuTimeoutRef.current = setTimeout(() => {
       setIsHovered(false)
-    }, 100)
+    }, 150)
   }
 
   const handleMenuMouseEnter = () => {
