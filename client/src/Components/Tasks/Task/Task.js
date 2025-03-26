@@ -36,7 +36,7 @@ export default function Task(props) {
           >
             <MdFlag />
           </button>
-          <button className='border-[1px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600'>
+          <button className='border-[2px] border-slate-100 rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-red-500 hover:bg-red-600'>
             <MdDelete />
           </button>
         </div>
