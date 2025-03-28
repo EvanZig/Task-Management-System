@@ -44,7 +44,7 @@ export default function Task(props) {
       <div
         className='text-white rounded px-1 bg-black mb-4 border-2 border-black hover:border-blue-400'
         draggable
-        style={{ backdropFilter: 'blur(10px)' }}
+        style={{ backdropFilter: 'blur(20px)' }}
       >
         <div
           className={
