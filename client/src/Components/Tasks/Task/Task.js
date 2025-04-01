@@ -21,7 +21,7 @@ export default function Task(props) {
   return (
     <div className='relative'>
       <div
-        className={`absolute top-[-45px] right-[-10px] transition-opacity ease-in-out duration-300 ${
+        className={`absolute top-[-50px] right-[-10px] transition-opacity ease-in-out duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onMouseEnter={handleMenuMouseEnter}
@@ -32,7 +32,7 @@ export default function Task(props) {
             <MdEdit />
           </button>
           <button
-            className={`border-[1px] rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-${props.color}`}
+            className={`border-[1px] rounded-xl p-4 hover:cursor-pointer mr-[0.3rem] bg-${props.color}`}
           >
             <MdFlag />
           </button>
@@ -48,7 +48,7 @@ export default function Task(props) {
       >
         <div
           className={
-            'w-full h-full resize-none text-white hover:cursor-pointer py-[2px] '
+            'w-full h-full resize-none min-h-[50%] text-white hover:cursor-pointer py-[2px] '
           }
           onMouseEnter={() => {
             clearTimeout(menuTimeoutRef.current)
