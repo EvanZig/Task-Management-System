@@ -48,7 +48,7 @@ export default function Task(props) {
       >
         <div
           className={
-            'w-full h-full resize-none min-h-[50%] text-white hover:cursor-pointer py-[2px] '
+            'w-full h-full resize-none min-h-[60%] text-white hover:cursor-pointer py-[2px] '
           }
           onMouseEnter={() => {
             clearTimeout(menuTimeoutRef.current)
