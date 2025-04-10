@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { FaRegTrashAlt } from 'react-icons/fa'
 import { NotificationsContext } from '../../../Context/NotificationsContext'
+import { CiCalendarDate } from 'react-icons/ci'
 
 export default function TaskDueDate() {
   const [isHovered, setIsHovered] = useState(false)
@@ -36,10 +37,12 @@ export default function TaskDueDate() {
             </button>
             <button
               type='date'
-              className='w-2/3 items-center justify-center flex text-black bg-yellow-500 hover:scale-105 border-2 border-black'
+              className='w-2/3 items-center justify-center flex text-black bg-blue-500 hover:scale-105 border-2 border-black'
               value={selectedDate || ''}
               onChange={handleDateChange}
-            />
+            >
+              <CiCalendarDate size={20} />
+            </button>
           </>
         ) : (
           <span className='w-full items-center justify-center flex text-black bg-yellow-500 border-2 border-black'>
