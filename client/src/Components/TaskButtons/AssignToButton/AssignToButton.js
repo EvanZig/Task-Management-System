@@ -25,11 +25,6 @@ const items = [
     icon: <FaRegUser />,
   },
   {
-    label: '4st menu item',
-    key: '4',
-    icon: <FaRegUser />,
-  },
-  {
     label: 'LogOUt',
     key: '5',
     icon: <FaRegUser />,
