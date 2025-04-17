@@ -16,6 +16,7 @@ export default function TaskDueDate() {
 
   const handleDelete = () => {
     setSelectedDate(null)
+    console.log('Deleted date')
     openNotification('Deleted', 'Removed date', 'middle')
   }
 
