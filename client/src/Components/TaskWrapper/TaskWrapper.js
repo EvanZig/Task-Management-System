@@ -13,9 +13,9 @@ export default function MyTasks(props) {
         </div>
       </div>
       <div className='mx-2 '>
-        <Task color='yellow' />
-        <Task color='green' />
-        <Task color='red' />
+        <Task state='yellow' />
+        <Task state='green' />
+        <Task state='red' />
       </div>
     </div>
   )

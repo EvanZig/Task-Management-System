@@ -30,7 +30,7 @@ export default function Task(props) {
             <MdEdit />
           </button>
           <button
-            className={`border-[1px] rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-${props.color}`}
+            className={`border-[1px] rounded-xl p-2 hover:cursor-pointer mr-[0.3rem] bg-${props.state}`}
           >
             <MdFlag />
           </button>
