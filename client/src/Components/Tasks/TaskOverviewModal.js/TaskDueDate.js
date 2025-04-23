@@ -11,7 +11,7 @@ export default function TaskDueDate() {
   const handleDateChange = (event) => {
     const newDate = event.target.value
     setSelectedDate(newDate)
-    openNotification('Date edited', `Date Changed to ${newDate}`, 'top')
+    openNotification('Date edited', `Date Changed to ${newDate}`, 'middle')
   }
 
   const handleDelete = () => {
