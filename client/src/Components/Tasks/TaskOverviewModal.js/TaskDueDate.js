@@ -47,7 +47,7 @@ export default function TaskDueDate() {
           </>
         ) : (
           <span className='w-full items-center justify-center flex text-black bg-yellow-500 border-2 border-black'>
-            {selectedDate ? selectedDate : 'No Date'}
+            {selectedDate ? selectedDate : 'None'}
           </span>
         )}
       </div>
