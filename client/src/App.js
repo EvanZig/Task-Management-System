@@ -14,7 +14,13 @@ export default function App() {
           <TaskOverviewModal />
           {/* <AppRoutes /> */}
           <CreateList />
-          <TaskWrapper />
+          <div className='flex flex-row justify-center items-center border-2 border-black hover:bg-gray-800'>
+            <TaskWrapper />
+            <TaskWrapper />
+            <TaskWrapper />
+            <TaskWrapper />
+            <TaskWrapper />
+          </div>
         </Structure>
       </AuthProvider>
     </div>
