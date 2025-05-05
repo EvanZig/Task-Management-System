@@ -80,7 +80,7 @@ export default function TaskOverviewModal() {
                   {isEditing ? (
                     <input
                       type='text'
-                      className='text-black font-semibold rounded-sm shadow-md p-1 w-[100%] bg-gray-50 titleInput'
+                      className='text-black font-semibold rounded-sm shadow-md p-2 w-[100%] bg-gray-50 titleInput'
                       ref={titleRef}
                       onChange={formDataChange}
                       onKeyDown={(e) => {
