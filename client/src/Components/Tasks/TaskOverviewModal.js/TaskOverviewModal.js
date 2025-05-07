@@ -12,7 +12,7 @@ import PriorityButton from '../../TaskButtons/PriorityButton/PriorityButton'
 export default function TaskOverviewModal() {
   const [taskData, setTaskData] = useState({
     title: 'task name',
-    description: '',
+    description: '. . .',
   })
   const [isEditing, setIsEditing] = useState(false)
   const [show, setShow] = useState(false)
