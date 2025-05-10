@@ -3,47 +3,39 @@ import { FaBold, FaCode, FaUnderline, FaItalic } from 'react-icons/fa'
 import { TbFileDescription } from 'react-icons/tb'
 import '../Tasks.scss'
 
-export default function TaskDescription(props) {
+export default function TaskDescription() {
   const [isBold, setIsBold] = useState(false)
   const [isUnderline, setIsUnderline] = useState(false)
   const [isItalic, setIsItalic] = useState(false)
   const [isCode, setIsCode] = useState(false)
-  const [isTyping, setIsTyping] = useState(false)
   const [selectedText, setSelectedText] = useState('')
   const TaskDescriptionRef = useRef(null)
 
   useEffect(() => {
-    TaskDescriptionRef.current.focus()
+    if (TaskDescriptionRef.current) {
+      TaskDescriptionRef.current.focus()
+    }
   }, [])
-
-  const boldClick = () => {
-    console.log('bold clicked')
-    setIsBold(!isBold)
-  }
-
-  const underlineClick = () => {
-    console.log('underline clicked')
-    setIsUnderline(!isUnderline)
-  }
-
-  const italicClick = () => {
-    console.log('italic clicked')
-    setIsItalic(!isItalic)
-  }
-
-  const codeClick = () => {
-    console.log('code clicked')
-    setIsCode(!isCode)
-  }
 
   const handleTextSelect = () => {
     const selection = window.getSelection()
     if (selection) {
       const selectedContent = selection.toString()
       setSelectedText(selectedContent)
-      console.log(selectedContent)
     }
   }
+
+  const renderButton = (icon, isActive, onClick, label) => (
+    <button
+      className={`hover:cursor-pointer mr-2 hover:scale-110 ${
+        isActive ? 'text-blue-400 scale-110' : ''
+      }`}
+      onClick={onClick}
+      aria-label={label}
+    >
+      {icon}
+    </button>
+  )
 
   return (
     <div>
@@ -52,49 +44,42 @@ export default function TaskDescription(props) {
           Description <TbFileDescription size={18} className='ml-2' />
         </label>
         <div className='justify-end items-end px-1 pt-1 mr-1 flex mb-2'>
-          <button
-            className={`hover:cursor-pointer mr-2 hover:scale-110 ${
-              isBold ? 'text-blue-400 scale-110' : ''
-            }`}
-          >
-            <FaBold size={20} onClick={boldClick} />
-          </button>
+          {renderButton(
+            <FaBold size={20} />,
+            isBold,
+            () => setIsBold(!isBold),
+            'Bold',
+          )}
           <div className='border-l border-gray-400 h-6 mr-2'></div>
-          <button
-            className={`hover:cursor-pointer mr-2 hover:scale-110 ${
-              isUnderline ? 'text-blue-400 scale-110' : ''
-            }`}
-          >
-            <FaUnderline size={19} onClick={underlineClick} />
-          </button>
+          {renderButton(
+            <FaUnderline size={19} />,
+            isUnderline,
+            () => setIsUnderline(!isUnderline),
+            'Underline',
+          )}
           <div className='border-l border-gray-400 h-6 mr-2'></div>
-          <button
-            className={`hover:cursor-pointer mr-2 hover:scale-110 ${
-              isItalic ? 'text-blue-400 scale-110' : ''
-            }`}
-          >
-            <FaItalic size={20} onClick={italicClick} />
-          </button>
+          {renderButton(
+            <FaItalic size={20} />,
+            isItalic,
+            () => setIsItalic(!isItalic),
+            'Italic',
+          )}
           <div className='border-l border-gray-400 h-6 mr-2'></div>
-          <button
-            className={`hover:cursor-pointer mr-2 hover:scale-110 ${
-              isCode && 'text-blue-400 scale-110'
-            }`}
-          >
-            <FaCode size={20} onClick={codeClick} />
-          </button>
+          {renderButton(
+            <FaCode size={20} />,
+            isCode,
+            () => setIsCode(!isCode),
+            'Code',
+          )}
         </div>
       </div>
       <textarea
         className='resize-none w-full rounded-b-md px-4 py-3 text-sm bg-zinc-700 outline-none border-2 border-zinc-400 border-solid focus:border-blue-400 customScrlbar'
         rows={9}
         onMouseUp={handleTextSelect}
-        onBlur={() => setIsTyping(false)}
-        onAbort={() => setIsTyping(false)}
         ref={TaskDescriptionRef}
-      >
-        . . .
-      </textarea>
+        placeholder='Type your description here...'
+      />
     </div>
   )
 }
