@@ -19,7 +19,7 @@ export default function Task(props) {
   return (
     <div className='relative'>
       <div
-        className={`absolute top-[-50px] right-[-10px] transition-opacity ease-in-out duration-300 ${
+        className={`absolute top-[-40px] right-[-10px] transition-opacity ease-in-out duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onMouseEnter={handleMenuMouseEnter}
