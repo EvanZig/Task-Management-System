@@ -1,30 +1,32 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, createContext } from 'react'
 
 const defaultState = {
   authStatus: 'LoggedOut',
   role: '',
+  token: '',
+  setAuthStatus: () => {},
+  setRole: () => {},
+  setToken: () => {},
 }
 
-export const AuthContext = React.createContext(defaultState)
+export const AuthContext = createContext(defaultState)
 
 export const AuthIsSignedIn = ({ children }) => {
   const { authStatus } = useContext(AuthContext)
-
-  return <>{authStatus === 'LoggedIn' ? children : null}</>
+  return authStatus === 'LoggedIn' ? <>{children}</> : null
 }
 
 export const AuthIsNotSignedIn = ({ children }) => {
   const { authStatus } = useContext(AuthContext)
-
-  return <>{authStatus === 'LoggedOut' ? children : null}</>
+  return authStatus === 'LoggedOut' ? <>{children}</> : null
 }
 
 export const AuthProvider = ({ children }) => {
   const [authStatus, setAuthStatus] = useState('LoggedOut')
-  const [token, setToken] = React.useState('')
+  const [token, setToken] = useState('')
   const [role, setRole] = useState('')
 
-  const state = {
+  const value = {
     authStatus,
     setAuthStatus,
     role,
@@ -33,7 +35,7 @@ export const AuthProvider = ({ children }) => {
     setToken,
   }
 
-  return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 export default AuthProvider
