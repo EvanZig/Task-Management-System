@@ -1,47 +1,35 @@
 import axios from 'axios'
-// import headers from context which will be the jwt token.
-
-import { toast } from 'react-toastify' // import my custom toast component
+import { toast } from 'react-toastify'
 
 const useRequest = () => {
   const baseURL = process.env.REACT_APP_SERVER_URL
 
-  const API = (headers) => {
-    const options = {
-      baseURL: baseURL,
-
-      headers: headers ? headers : undefined,
-    }
-
-    const instance = axios.create(options)
+  const API = (headers = {}) => {
+    const instance = axios.create({
+      baseURL,
+      headers: Object.keys(headers).length ? headers : undefined,
+    })
 
     instance.interceptors.request.use(
-      (config) => {
-        return config
-      },
-
+      (config) => config,
       (error) => Promise.reject(error),
     )
 
     instance.interceptors.response.use(
-      (res) => {
-        if (res?.data?.message) {
-          toast.success(res.data.message)
+      (response) => {
+        const message = response?.data?.message
+        if (message) {
+          toast.success(message)
         }
-
-        return res
+        return response
       },
-
-      async (err) => {
-        const errorMessage = err?.response?.data?.error
-          ? err?.response?.data?.error
-          : err?.response?.data?.message
-            ? err?.response?.data?.message
-            : 'Unexpected error'
+      (error) => {
+        const errorData = error?.response?.data
+        const errorMessage =
+          errorData?.error || errorData?.message || 'Unexpected error'
 
         toast.error(errorMessage)
-
-        return Promise.reject(err)
+        return Promise.reject(error)
       },
     )
 
