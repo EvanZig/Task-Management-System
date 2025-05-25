@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaRegUser } from 'react-icons/fa'
 import { Dropdown, message } from 'antd'
 import '../Buttons.scss'

@@ -1,4 +1,3 @@
-import React from 'react'
 import Task from '../Tasks/Task/Task'
 
 export default function MyTasks(props) {

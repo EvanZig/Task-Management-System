@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { FaRegTrashAlt } from 'react-icons/fa'
 import { NotificationsContext } from '../../../Context/NotificationsContext'
 import { CiCalendarDate } from 'react-icons/ci'

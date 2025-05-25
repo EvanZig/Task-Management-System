@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import './TaskOverviewModal.scss'
 import { RiCloseLine } from 'react-icons/ri'

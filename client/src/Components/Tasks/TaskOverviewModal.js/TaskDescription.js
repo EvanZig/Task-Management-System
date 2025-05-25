@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { FaBold, FaCode, FaUnderline, FaItalic } from 'react-icons/fa'
 import { TbFileDescription } from 'react-icons/tb'
 import '../Tasks.scss'

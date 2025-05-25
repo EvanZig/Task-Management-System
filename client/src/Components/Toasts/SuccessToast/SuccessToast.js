@@ -1,4 +1,3 @@
-import React from 'react'
 import { Toast } from 'react-bootstrap'
 import '../ToastStyles.scss'
 
